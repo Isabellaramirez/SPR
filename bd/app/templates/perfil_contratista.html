@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Contratista</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil_contratista.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Perfil del Contratista</h2>
+        <div class="card" style="width: 18rem;">
+            {% if user.foto %}
+                <img src="{{ url_for('static', filename=user.foto) }}" class="card-img-top" alt="Foto del Contratista">
+            {% else %}
+                <img src="{{ url_for('static', filename='img/default_profile.png') }}" class="card-img-top" alt="Foto del Contratista">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ user.nombre }} {{ user.apellido }}</h5>
+                <p class="card-text">
+                    <strong>Cédula:</strong> {{ user.cedula }}<br>
+                    <strong>Correo:</strong> {{ user.correo }}<br>
+                    <strong>Teléfono:</strong> {{ user.telefono }}<br>
+                    <strong>Dirección:</strong> {{ user.direccion }}<br>
+                    <strong>descripcion:</strong> {{ user.descripcion }}<br>
+                    <strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento }}<br>
+                </p>
+                <a href="{{ url_for('main_bp.index') }}" class="btn btn-primary">Volver</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
