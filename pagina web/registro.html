@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPR</title>
+    <link rel="stylesheet" href="./css/registro.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="wrapper bg-white">
+        <h2 class="registro ">Registro</h2>
+        <a href="./index.html"><img src="./img/logo.png" alt="" class="spr"></a>
+        <script>
+            function validarTelefono(event) {
+                const input = event.target.value;
+                // Permitir solo números y limitar a 10 caracteres
+                if (!/^\d{0,10}$/.test(input)) {
+                    event.target.value = input.slice(0, 10); // Limitar a 10 caracteres
+                }
+            }
+        </script>
+        <form class="pt-3">
+        
+            
+            <select id="category" name="category">
+                <option value="">--- Rol ---</option>
+                <option value="IT">Contratista</option>
+                <option value="Marketing">Prestador Servicio</option>
+            </select>
+            
+            <div class="form-group py-2">
+                <div class="input-field"> 
+                    <span class="far fa-user p-2"></span> 
+                    <input type="text" minlength="3" maxlength="25" placeholder=" Nombre " required> 
+                </div>
+            </div>
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> 
+                    <span class="fas fa-lock p-2"></span> 
+                    <input type="text" minlength="3" maxlength="25" placeholder="Apellido" required> 
+                    
+                </div>
+            </div> 
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> 
+                    <span class="far fa-user p-2"></span> 
+                    <input type="email" maxlength="45" placeholder=" Correo " required> 
+                </div>
+            </div>
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> 
+                    <span class="far fa-user p-2"></span> 
+                    <input type="number" id="telefono" name="telefono" maxlength="10"  required oninput="validarTelefono(event)" placeholder="Telefono" required>
+                </div>
+            </div>
+            
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> 
+                    <span class="far fa-user p-2"></span> 
+                    <input type="password" minlength="6" maxlength="45" placeholder=" Contraseña " required > </div>
+            </div>
+            
+            <div class="form-group py-1 pb-2">
+                <div class="input-field"> 
+                    <span class="far fa-user p-2"></span> 
+                    <input type="password" minlength="6" maxlength="45" placeholder=" Confirmar Contraseña " required> </div>
+            </div>
+
+
+            <div class="search-container">
+                <form id="searchForm">
+                    
+                   
+
+            
+            <div class="d-flex align-items-start">                
+                <button class="btn btn-block text-center my-3">registrase</button></div>
+            </div>    
+            
+                    
+        </form>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
